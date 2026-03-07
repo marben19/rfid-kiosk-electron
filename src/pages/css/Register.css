@@ -1,0 +1,222 @@
+/* =========================
+   MAIN CONTAINER
+========================= */
+.register-container {
+  height: 100vh;
+  width: 100vw;                /* ensure full width */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  color: white;
+  overflow: hidden;            /* prevent scrollbars */
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.register-wrapper {
+  width: 90%;
+  max-width: 1400px;          /* responsive max width */
+  height: 80vh;               /* responsive height */
+  display: flex;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+.register-left {
+  flex: 1;
+  padding: 4%;
+  background: linear-gradient(135deg, #00ffcc, #0066ff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #0f172a;
+  min-width: 300px;             /* responsive minimum */
+}
+
+.register-left h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.register-left p {
+  margin-top: 10px;
+  opacity: 0.85;
+}
+
+.rfid-status {
+  margin-top: 30px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.register-card {
+  flex: 1;
+  padding: 3% 4%;
+  background: rgba(15, 23, 42, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-width: 300px;            /* responsive minimum */
+}
+
+/* =========================
+   TITLE
+========================= */
+.form-title {
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* =========================
+   FORM
+========================= */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;                   /* spacing between inputs */
+}
+
+/* =========================
+   ROW GROUP
+========================= */
+.row-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;             /* wrap on smaller screens */
+}
+
+.row-group .input-group {
+  flex: 1;
+}
+
+/* =========================
+   FLOATING INPUTS
+========================= */
+.input-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 16px 10px 6px 10px;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #334155;
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+/* Always floating label */
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: -8px;
+  font-size: 0.75rem;
+  color: #00ffcc;
+  pointer-events: none;
+}
+
+/* Input focus glow */
+.input-group input:focus,
+.input-group select:focus {
+  border-bottom: 2px solid #00ffcc;
+}
+
+/* =========================
+   SELECT
+========================= */
+.modern-select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.register-btn {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00ffcc, #0066ff);
+  color: #0f172a;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 204, 0.35);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  color: white;
+}
+
+/* Base select style */
+.modern-select {
+  appearance: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.08); /* subtle background */
+  color: white;                                /* text color */
+  border: none;
+  border-bottom: 2px solid #334155;
+  padding: 14px 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+/* Focused select */
+.modern-select:focus {
+  border-bottom: 2px solid #00ffcc;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+/* Options text */
+.modern-select option {
+  background-color: #0f172a; /* dark background for options */
+  color: white;              /* text color */
+}

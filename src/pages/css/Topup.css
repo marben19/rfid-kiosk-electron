@@ -1,0 +1,90 @@
+/* =========================
+   CONTAINER
+========================= */
+.topup-container {
+  height: 100vh;
+  width: 100vw;                  /* full width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   CARD
+========================= */
+.topup-card {
+  width: 90%;
+  max-width: 600px;             /* responsive max width */
+  padding: 5% 4%;               /* responsive padding */
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   TITLE
+========================= */
+.topup-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.topup-subtitle {
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   DISPLAY / AMOUNT
+========================= */
+.topup-display h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.amount-box {
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 20px 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #00ffcc;
+  box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+  width: 80%;
+  max-width: 400px;
+}
+
+/* =========================
+   BUTTONS (optional)
+========================= */
+.topup-btn {
+  margin-top: 20px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00ffcc, #0066ff);
+  color: #0f172a;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.topup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 204, 0.35);
+}
