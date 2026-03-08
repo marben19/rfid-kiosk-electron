@@ -6,16 +6,26 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
-    fullscreen: false,       // kiosk mode
-    autoHideMenuBar: false,  // hide menu
+
+    autoHideMenuBar: true,     // hide menu bar
+    resizable: false,          // prevent resizing
+    minimizable: false,        // prevent minimize
+    maximizable: false,        // prevent maximize button
+
     webPreferences: {
-      nodeIntegration: true, // allow Node.js in renderer
-      contextIsolation: false, 
-      preload: path.join(__dirname, "preload.js") // optional
+      nodeIntegration: true,
+      contextIsolation: false,
+      preload: path.join(__dirname, "preload.js"),
     },
   });
 
-  // Load Vite dev server in dev mode
+  // Maximize window but keep taskbar visible
+  win.maximize();
+
+  // Remove application menu
+  win.removeMenu();
+
+  // Load Vite dev server
   win.loadURL("http://localhost:5173");
 
   // Optional: open DevTools
@@ -27,10 +37,14 @@ app.whenReady().then(createWindow);
 
 // Quit app when all windows closed
 app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") app.quit();
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
 });
 
 // macOS behavior: re-open window if dock icon clicked
 app.on("activate", () => {
-  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
 });
