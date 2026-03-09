@@ -97,7 +97,7 @@ export default function KioskScreen() {
 
         try {
           const response = await fetch(
-            "https://unfecund-unstretchable-hyacinth.ngrok-free.dev/balance",
+            "https://unfecund-unstretchable-hyacinth.ngrok-free.dev/cardholders/balance",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
