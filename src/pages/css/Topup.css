@@ -3,7 +3,7 @@
 ========================= */
 .topup-container {
   height: 100vh;
-  width: 100vw;                  /* full width */
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
   overflow: hidden;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
 }
 
@@ -19,9 +19,9 @@
    CARD
 ========================= */
 .topup-card {
-  width: 90%;
-  max-width: 600px;             /* responsive max width */
-  padding: 5% 4%;               /* responsive padding */
+  width: 95%;
+  max-width: 1000px;   /* was 600px */
+  padding: 60px 60px;
   border-radius: 30px;
   backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.05);
@@ -64,10 +64,28 @@
   backdrop-filter: blur(10px);
   color: #00ffcc;
   box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
-  width: 80%;
-  max-width: 400px;
+
+  width: 100%;
+  max-width: 800px;   /* increased */
+
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
+.topup-row {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+}
+.topup-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* =========================
    BUTTONS (optional)
 ========================= */
@@ -87,4 +105,19 @@
 .topup-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 255, 204, 0.35);
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.user-name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.user-category {
+  font-size: 1rem;
+  opacity: 0.8;
 }

@@ -1,5 +1,4 @@
-// electron/main.js
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
 
 function createWindow() {
@@ -7,10 +6,10 @@ function createWindow() {
     width: 1200,
     height: 800,
 
-    autoHideMenuBar: true,     // hide menu bar
-    resizable: false,          // prevent resizing
-    minimizable: false,        // prevent minimize
-    maximizable: false,        // prevent maximize button
+    autoHideMenuBar: false,  // show menu bar
+    resizable: false,
+    minimizable: false,
+    maximizable: false,
 
     webPreferences: {
       nodeIntegration: true,
@@ -19,30 +18,52 @@ function createWindow() {
     },
   });
 
-  // Maximize window but keep taskbar visible
   win.maximize();
 
-  // Remove application menu
-  win.removeMenu();
-
-  // Load Vite dev server
   win.loadURL("http://localhost:5173");
 
-  // Optional: open DevTools
-  // win.webContents.openDevTools();
+  // MENU TEMPLATE
+  const menuTemplate = [
+    {
+      label: "File",
+      submenu: [
+        {
+          label: "Reload",
+          click: () => win.reload(),
+        },
+        {
+          label: "Exit",
+          click: () => app.quit(),
+        },
+      ],
+    },
+    {
+      label: "View",
+      submenu: [
+        {
+          label: "Toggle DevTools",
+          click: () => win.webContents.toggleDevTools(),
+        },
+        {
+          label: "Fullscreen",
+          click: () => win.setFullScreen(!win.isFullScreen()),
+        },
+      ],
+    },
+  ];
+
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
 }
 
-// App ready
 app.whenReady().then(createWindow);
 
-// Quit app when all windows closed
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
   }
 });
 
-// macOS behavior: re-open window if dock icon clicked
 app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();

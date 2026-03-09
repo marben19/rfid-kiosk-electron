@@ -129,6 +129,18 @@ app.get("/start-card", (req, res) => {
   });
 });
 
+app.get("/stop-scan", (req, res) => {
+  if (!espPort) return res.status(500).json({ error: "ESP32 not connected" });
+
+  espPort.write("TOPUP_DIS\n", (err) => {
+    if (err) {
+      logger.error(`Failed to send TOPUP_DIS: ${err.message}`);
+      return res.status(500).json({ error: "Failed to send TOPUP_DIS" });
+    }
+    logger.info("TOPUP_DIS command sent to ESP32");
+    res.json({ message: "TOPUP_DIS sent" });
+  });
+});
 
 app.get("/start-scan", (req, res) => {
   if (!espPort) return res.status(500).json({ error: "ESP32 not connected" });

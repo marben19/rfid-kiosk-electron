@@ -33,7 +33,7 @@ export default function KioskScreen() {
   // ===============================
   const handleTopupClick = async () => {
     setShowTopupModal(true);
-
+    // navigate("/topup");
     // Start card scan
     await fetch("http://localhost:3001/start-scan")
       .then((res) => res.json())
@@ -73,9 +73,18 @@ export default function KioskScreen() {
       }
     };
 
-    stopCard();
-  }, []);
+    const stopScan = async () => {
+      try {
+        await fetch("http://localhost:3001/stop-scan");
+        console.log("Top-up disabled");
+      } catch (error) {
+        console.error("Failed to stop top-up", error);
+      }
+    };
 
+    stopCard();
+    stopScan();
+  }, []);
   // ===============================
   // BALANCE BUTTON
   // ===============================
