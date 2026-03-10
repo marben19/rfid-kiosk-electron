@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "server": "node server/index.js",
     "electron": "electron electron/main.cjs",
-    "electron:dev": "concurrently \"wait-on http://localhost:5173 && electron electron/main.cjs\" \"vite\""
+    "electron:dev": "concurrently \"npm run server\" \"vite\" \"wait-on http://localhost:5173 && electron electron/main.cjs\""
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
