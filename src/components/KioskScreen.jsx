@@ -14,7 +14,7 @@ export default function KioskScreen() {
   const wsRef = useRef(null);
 
   // device ID from .env
-  const deviceId = process.env.REACT_APP_DEVICE_ID;
+  const deviceId = "e92b51f6-4683-4844-8395-8d1a4f8849e4";
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -91,7 +91,7 @@ export default function KioskScreen() {
   const handleBalanceClick = async () => {
     setShowBalanceModal(true);
 
-    await fetch("http://localhost:3001/start-scan")
+    await fetch("http://localhost:3001/start-card")
       .then((res) => res.json())
       .catch(console.error);
 
@@ -154,8 +154,8 @@ export default function KioskScreen() {
       */}
 
       <div className="kiosk-content">
-        <h1 className="kiosk-title">Pidgeon Smart Kiosk</h1>
-        <p className="kiosk-subtitle">Tap your card to begin</p>
+        <h1 className="kiosk-title">PIDGEON Kiosk</h1>
+        <p className="kiosk-subtitle">Select an option below to begin!</p>
 
         <div className="kiosk-buttons">
           <div className="kiosk-card blue" onClick={handleBalanceClick}>
