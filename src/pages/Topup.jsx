@@ -8,7 +8,7 @@ export default function Topup() {
 
   const scannedCardNo = location.state?.cardNo;
   // const scannedCardNo = "47B2FE5B";
-  const deviceId = process.env.REACT_APP_DEVICE_ID;
+  const deviceId = "e92b51f6-4683-4844-8395-8d1a4f8849e4";
 
   const [insertedAmount, setInsertedAmount] = useState(0);
   const [userBalance, setUserBalance] = useState(0);

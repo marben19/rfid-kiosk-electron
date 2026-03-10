@@ -14,7 +14,7 @@ export default function KioskScreen() {
   const wsRef = useRef(null);
 
   // device ID from .env
-  const deviceId = process.env.REACT_APP_DEVICE_ID;
+  const deviceId = "e92b51f6-4683-4844-8395-8d1a4f8849e4";
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
