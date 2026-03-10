@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaWallet, FaPlusCircle, FaIdBadge, FaExpand, FaCompress } from "react-icons/fa";
+import { FaWallet, FaPlusCircle, FaIdBadge, FaExpand, FaCompress, FaTimes } from "react-icons/fa";
 import { Modal } from "react-bootstrap";
 import Swal from "sweetalert2";
 import "./KioskScreen.css";
@@ -146,13 +146,9 @@ export default function KioskScreen() {
 
   return (
     <div className="kiosk-container">
-      {/* Fullscreen button (optional) */}
-      {/* 
-      <button className="fullscreen-btn" onClick={toggleFullscreen}>
-        {isFullscreen ? <FaCompress size={22} /> : <FaExpand size={22} />}
+      <button className="exit-btn" onClick={() => window.close()}>
+        <FaTimes size={55} />
       </button>
-      */}
-
       <div className="kiosk-content">
         <h1 className="kiosk-title">PIDGEON Kiosk</h1>
         <p className="kiosk-subtitle">Select an option below to begin!</p>
